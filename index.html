@@ -8,21 +8,42 @@
     <title>PlayMusic</title>
 </head>
 <body>
-    <div id="player">
-        <h4><i class="material-icons">audiotrack</i>PlayMusic</h4>
+    <div id="player" class="card">
+        <h4 class="titulo"><i class="material-icons">audiotrack</i>PlayMusic</h4>
         <div class="card">
             <div class="card-image">
-               
+                <a href="#" class="btn-floating btn-large halfway-fab">
+                    <i class="material-icons" id="play-pause">play_arrow</i>
+                  </a>
             </div>
             <div class="card-content">
                 <h5 class="titulo">Title</h5>
                 <p class="artist">Artist</p>
-                <audio  controls></audio>
+                <div class="row valign-wrapper">
+                    <div class="col s2" id="current-duration">00:00</div>
+
+                    <div class="col s7 range-field valign-wrapper">
+                        <input type="range" min ="0" max="0" id="seekbar" step="1">
+                    </div>
+
+                    <div class="col s2" id="total-duration">00:00</div>
+
+                    <div>
+                        <a href="#">
+                            <i class="material-icons" >volume_up</i>
+                            
+                        </a>
+                    </div>
+                    <div class="col s2 range-field valign-wrapper">
+                        <input type="range" min ="0" max="100" id="vol-control" step="1">
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
+<script src="./data.js"></script>
 <script src="./player.js"></script>
-
 <script src="./index.js"></script>
 </body>
 </html>

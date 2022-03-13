@@ -3,21 +3,37 @@ window.player = {
      title : document.querySelector(".card-content h5"),
      artist :document.querySelector(".artist"),
      audio : document.querySelector("audio"),
-     data : {
-        title:
-          "Anjos",
-        artist: "O Rappa",
-        cover: "files/rappa.jpg",
-        file: "music/Anjos.mp3"
+     audioData:musicas,
+     currentAudio : {
       }, 
+      currentTrack:0,
        start(){
-        this.cover.style.background = `url('${this.data.cover}') no-repeat center center / cover`;
-        this.title.innerText = this.data.title;
-        this.artist.innerText = this.data.artist;
-        this.audio.src = this.data.file;
-    }
+        this.update();
+       
+        this.audio.onended = () => this.next();
+        },
+        next(){
+          this.currentTrack++
+          if (this.currentTrack == this.audioData.length) this.restart();
+           
+          this.update();
+          
+        },
+        update(){
+          this.currentAudio = this.audioData[this.currentTrack];
+          this.cover.style.background = `url('${path(
+            this.currentAudio.cover
+          )}') no-repeat center center / cover`;
+          this.title.innerText = this.currentAudio.title;
+          this.artist.innerText = this.currentAudio.artist;
+          this.audio.src = path(this.currentAudio.file);
+        },
+        restart(){
+          this.currentTrack=0;
+            this.update();
+        }
+    };
      
-};
 
-player.start();
+
  
