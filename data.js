@@ -31,6 +31,14 @@ window.musicas =[
         cover:"freefallin.jpg",
         file:"freefallin.mp3"
 
+    },
+
+    {
+        title:"Meu pedaço de pecado",
+        artist:"João Gomes",
+        cover:"joaogomes.jpg",
+        file:"joaogomesm.mp3"
+
     }
     
 ]
