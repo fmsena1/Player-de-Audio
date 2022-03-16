@@ -1,4 +1,4 @@
-window.musicas =[
+export default [
 
     {
         title:"Shape of you",

@@ -1,13 +1,12 @@
-var produto= {
-    id:9,
-    //chave        valor
-    nomeProduto: 'Violão',
-    valorProduto:200,
-    dataFabricacao:'07/02/2000',
-    dataAtual:15.03,
-};
-var vencimento = 02,02;
-var validade = produto.dataAtual;
-if(vencimento > validade){
-    console.log("Vencido");
-};
+function secondsToMinutes(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+  
+    return `${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`;
+  }
+  
+  const path = function (file) {
+    return `files/${file}`;
+  };
+  
+  export { path, secondsToMinutes };
